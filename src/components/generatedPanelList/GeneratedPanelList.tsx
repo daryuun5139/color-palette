@@ -20,7 +20,7 @@ const GeneratedPanelList = (props: Props) => {
   return (
     <div>
       <Tabs defaultValue="trend" className="h-[600px] w-full rounded-md border-[1px]">
-        <TabsList>
+        <TabsList className="text-black">
           <TabsTrigger value="trend">trend</TabsTrigger>
           <TabsTrigger value="red">red</TabsTrigger>
           <TabsTrigger value="blue">blue</TabsTrigger>

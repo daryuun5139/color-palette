@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="overscroll-x-none;">
       {/* スワイプバックの無効化 */}
-      <body className={inter.className}>
+      <body className={`${inter.className} mx-auto w-[1100px]`}>
         <Providers>{children}</Providers>
       </body>
     </html>

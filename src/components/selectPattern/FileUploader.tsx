@@ -35,7 +35,7 @@ const FileUploader = (props: Props) => {
 
   return (
     <>
-      <input type="file" accept="image/svg" onChange={handleFileChange} />
+      <input type="file" accept="image/svg" onChange={handleFileChange} aria-label="FileUpload" />
     </>
   );
 };

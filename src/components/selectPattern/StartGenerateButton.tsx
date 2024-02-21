@@ -115,7 +115,7 @@ const StartGenerateButton = (props: Props) => {
   return (
     <>
       <Button
-        className="mx-auto mt-8 bg-blue-500 px-8 py-6 text-lg font-bold hover:bg-blue-500  hover:opacity-80  hover:transition-all hover:duration-300"
+        className="mx-auto mt-8 border-2 border-black bg-slate-200 px-8 py-6 text-lg font-bold text-black hover:bg-slate-400 hover:transition-all hover:duration-500"
         onClick={startGenerate}
       >
         パネルの生成を開始する

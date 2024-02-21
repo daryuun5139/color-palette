@@ -66,7 +66,9 @@ const DefaultPatterns = (props: Props) => {
               data={`/${name}.svg`}
               type="image/svg+xml"
               className="z-0 h-[50px] w-[50px] border-[1px]"
-            ></object>
+            >
+              {name}
+            </object>
             <h2 className="text-left">{name}</h2>
           </label>
         </div>

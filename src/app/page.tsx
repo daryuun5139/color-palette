@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <div className="mx-auto flex w-[1100px] flex-col items-center pt-16">
+      <div className="mx-auto flex flex-col items-center pt-16">
         {/* HowToUse ---------------------------------------------------------------- */}
         <div className="pb-16">
           <HowToUse />
