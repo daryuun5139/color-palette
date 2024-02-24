@@ -1,6 +1,6 @@
 type Props = {};
 
-const NavBar = (props: Props) => {
+const Header = (props: Props) => {
   return (
     <>
       <div className="flex h-16 flex-col items-center justify-center border-b-2">
@@ -10,4 +10,4 @@ const NavBar = (props: Props) => {
   );
 };
 
-export default NavBar;
+export default Header;

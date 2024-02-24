@@ -1,17 +1,17 @@
-// Patternを選択orアップロードComponent
+// 画面右側のPatternを選択orアップロードするエリア
 "use client";
 
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import FileUploader from "./FileUploader";
-import DefaultPatterns from "./DefaultPatterns";
 import ResetPatternButton from "./ResetPatternButton";
 import { useRecoilState } from "recoil";
 import { patternState } from "@/lib/atoms/pattern-state";
+import DefaultPatternList from "./DefaultPatternList";
 
 type Props = {};
 
-const PatternSelectUpload = (props: Props) => {
-  const [pattern, setPattern] = useRecoilState(patternState);
+const PatternSelectUpload = () => {
+  const [pattern, setPattern] = useRecoilState<string>(patternState); //選択されたPatternの名前(ex,Argyle)
 
   return (
     <div>
@@ -23,7 +23,7 @@ const PatternSelectUpload = (props: Props) => {
         {/* デフォルトのパターンリスト------------------------------------------------------ */}
         <ScrollArea className="flex h-4/5 w-full">
           <div className="grid grid-cols-3 gap-1">
-            <DefaultPatterns />
+            <DefaultPatternList />
           </div>
           <ScrollBar />
         </ScrollArea>

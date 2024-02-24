@@ -1,5 +1,4 @@
 // svgFileアップロード機能component
-"use client";
 
 import { useRecoilState } from "recoil";
 import { svgFileContent } from "@/lib/atoms/svgfile-content";
@@ -9,17 +8,16 @@ import { ChangeEvent } from "react";
 type Props = {};
 
 const FileUploader = (props: Props) => {
-  const [svgFile, setSvgFile] = useRecoilState(svgFileContent);
-  const [pattern, setPattern] = useRecoilState(patternState);
+  const [svgFile, setSvgFile] = useRecoilState<string>(svgFileContent); //選択されたPatternのsvgコード
+  const [pattern, setPattern] = useRecoilState<string>(patternState); //選択されたPatternの名前(ex,Argyle)
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
-    if (event.currentTarget?.files && event.currentTarget.files[0]) {
-      const targetFile = event.currentTarget.files[0];
+    if (event.currentTarget.files && event.currentTarget.files[0]) {
+      const targetFile: File = event.currentTarget.files[0];
       const reader = new FileReader();
       if (targetFile) {
         reader.readAsText(targetFile);
       }
-
       reader.addEventListener(
         "load",
         () => {

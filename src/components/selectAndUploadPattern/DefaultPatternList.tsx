@@ -1,7 +1,5 @@
 // デフォルトのパターンリスト
 
-"use client";
-
 import { useRecoilState } from "recoil";
 import { svgFileContent } from "@/lib/atoms/svgfile-content";
 import { patternState } from "@/lib/atoms/pattern-state";
@@ -14,19 +12,18 @@ import { Asanoha } from "./Defaultpatterns/Asanoha";
 
 type Props = {};
 
-const DefaultPatterns = (props: Props) => {
-  const [svgFile, setSvgFile] = useRecoilState(svgFileContent);
-  const [pattern, setPattern] = useRecoilState(patternState);
+const DefaultPatternList = (props: Props) => {
+  const [svgFile, setSvgFile] = useRecoilState<string>(svgFileContent); //選択されたPatternのsvgコード
+  const [pattern, setPattern] = useRecoilState<string>(patternState); //選択されたPatternの名前(ex,Argyle)
 
-  const designNames = ["Triangles", "Argyle", "TartanCheck", "ColorfulDot", "Asanoha"];
+  const PatternNames: string[] = ["Triangles", "Argyle", "TartanCheck", "ColorfulDot", "Asanoha"];
 
   //Pattern選択ボタン
   const onClick = (event: ChangeEvent<HTMLInputElement>) => {
-    setPattern(event.currentTarget.value); // currentTargetとtargetの違いは？
+    setPattern(event.currentTarget.value);
   };
 
   useEffect(() => {
-    //Cannot update a component while rendering ~
     switch (pattern) {
       case "Triangles":
         setSvgFile(Triangles);
@@ -48,7 +45,7 @@ const DefaultPatterns = (props: Props) => {
 
   return (
     <>
-      {designNames.map((name) => (
+      {PatternNames.map((name) => (
         <div className="w-full" key={name}>
           <input
             type="radio"
@@ -77,4 +74,4 @@ const DefaultPatterns = (props: Props) => {
   );
 };
 
-export default DefaultPatterns;
+export default DefaultPatternList;

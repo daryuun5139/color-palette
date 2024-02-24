@@ -1,35 +1,30 @@
-// blue系カラーリストに基づいて生成されるパネルリスト
-"use client";
+// 各カラーの生成されたパネル一覧
 
 // Recoil系インポート
-import { useRecoilState } from "recoil";
 import { useRecoilValue } from "recoil";
 import { patternState } from "@/lib/atoms/pattern-state";
 import { svgFileContent } from "@/lib/atoms/svgfile-content";
-import { randomColorState_Blue } from "@/lib/atoms/random-color-state";
 // レイアウト系インポート
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 // その他インポート
-import { baseBluePalettes } from "@/lib/colorData/colorPalettes";
-import SetPatternAndColor, { SetPatternAndColorProps } from "../SetPatternAndColor";
+import SetPatternAndColor from "./SetPatternAndColor";
+import { outputObj02 } from "@/lib/atoms/generated-panel-array";
 
 type Props = {
-  // selectedPattern: () => JSX.Element | undefined;
-  // コールシグネチャの設定：typeまたはinterface内で関数型を定義　https://commte.net/nextjs-call-signature
+  contents: outputObj02;
+  colorName: string;
+  palettes: string[][];
 };
 
-const BlueColorsList = () => {
-  const pattern = useRecoilValue(patternState);
-  const svgFile = useRecoilValue(svgFileContent);
-  const colorName = "blue";
-  const [randomColorListBlue, setRandomColorListBlue] = useRecoilState(randomColorState_Blue);
+const PanelListOfEachColor = ({ contents, colorName, palettes }: Props) => {
+  const pattern = useRecoilValue<string>(patternState); //選択されたPatternの名前(ex,Argyle)
+  const svgFile = useRecoilValue<string>(svgFileContent); //選択されたPatternのsvgコード
 
   return (
     <>
-      {pattern && svgFile ? (
-        // パターンを選択している場合--------------------------------------------------------------
+      {pattern && svgFile && contents ? (
         <>
-          {baseBluePalettes.map((palette, paletteIndex) => (
+          {palettes.map((palette: string[], paletteIndex: number) => (
             <div key={`${colorName}-palette-${paletteIndex + 1}`}>
               {/* パレットの色一覧------------------------------------- */}
               <div className="flex flex-col pl-4">
@@ -47,16 +42,12 @@ const BlueColorsList = () => {
               <div>
                 {/* パネル一覧------------------------------------------- */}
                 <ScrollArea className="w-[60%] whitespace-nowrap">
-                  {/* scroll in scrollが動作しない問題 */}
-                  {randomColorListBlue[paletteIndex] ? (
+                  {contents[colorName][paletteIndex] ? (
                     <SetPatternAndColor
-                      palette={palette}
+                      contents={contents}
                       paletteIndex={paletteIndex}
-                      svgFile={svgFile}
-                      pattern={pattern}
                       colorName={colorName}
-                      randomColorList={randomColorListBlue}
-                    /> //https://qiita.com/Yuki-Inui/items/3824562115f1f593919d
+                    />
                   ) : (
                     <></>
                   )}
@@ -80,4 +71,4 @@ const BlueColorsList = () => {
   );
 };
 
-export default BlueColorsList;
+export default PanelListOfEachColor;
