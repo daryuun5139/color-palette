@@ -5,6 +5,7 @@
 illustratorで柄模様を作ることにハマっていたときに作成したサイトです。
 柄模様のSVGデータをアップロードすると、異なる配色の柄模様をランダムで生成してくれます。
 また生成された柄模様のHexコードをコピーできる仕様になっています。
+URL: https://color-palette-lyart.vercel.app/
 
 <img src="public/readme/color-palette.gif" alt="color-palette-gif" title="color-palette-gif" width="450" height="300"><img src="public/readme/color-palette.png" alt="color-palette" title="color-palette" width="280" height="350">
 
