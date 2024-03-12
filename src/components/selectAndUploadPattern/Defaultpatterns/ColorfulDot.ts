@@ -1,7 +1,7 @@
 export const ColorfulDot = `<?xml version="1.0" encoding="UTF-8"?>
 <svg id="_レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
   <defs>
-    <pattern id="Unnamed_Pattern" data-name="Unnamed Pattern" x="0" y="0" width="1951" height="1051" patternTransform="translate(-743.2 -332.45)" patternUnits="userSpaceOnUse" viewBox="0 0 1951 1051">
+    <pattern id="Unnamed_Pattern" data-name="Unnamed Pattern" x="0" y="0" width="2000" height="1000" patternTransform="translate(-743.2 -332.45)" patternUnits="userSpaceOnUse" viewBox="0 0 2000 1000">
       <g>
         <rect width="1951" height="1051" fill="none" stroke-width="0"/>
         <rect x=".5" y=".5" width="1950" height="1050" fill="#2b2b47" stroke="#000" stroke-miterlimit="10"/>
