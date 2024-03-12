@@ -6,7 +6,8 @@ illustratorで柄模様を作ることにハマっていたときに作成した
 柄模様のSVGデータをアップロードすると、異なる配色の柄模様をランダムで生成してくれます。
 また生成された柄模様のHexコードをコピーできる仕様になっています。
 
-<img src="public/readme/color-palette.png" alt="color-palette" title="color-palette" width="280" height="350"><img src="public/readme/sp-screen.jpg" alt="sp-screen" title="sp-screen" width="170" height="250">
+
+![color-palette](https://github.com/daryuun5139/color-palette/assets/118511364/a6c6ce74-ebef-4303-9467-2c6344b75486)<img src="public/readme/color-palette.png" alt="color-palette" title="color-palette" width="280" height="350">
 
 ##### <製作日>
 
