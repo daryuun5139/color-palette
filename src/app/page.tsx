@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div className="mx-auto flex flex-col items-center bg-slate-100 pt-16">
+      <div className="mx-auto flex flex-col items-center pt-16">
         {/* HowToUse ---------------------------------------------------------------- */}
         <div className="pb-16">
           <HowToUse />
