@@ -7,7 +7,7 @@ import { ChangeEvent, useEffect } from "react";
 import { Triangles } from "./Defaultpatterns/Triangles";
 import { Argyle } from "./Defaultpatterns/Argyle";
 import { TartanCheck } from "./Defaultpatterns/TartanCheck";
-import { ColorfulDot } from "./Defaultpatterns/ColorfulDot";
+import { ColorDot } from "./Defaultpatterns/ColorDot";
 import { Asanoha } from "./Defaultpatterns/Asanoha";
 
 type Props = {};
@@ -16,7 +16,7 @@ const DefaultPatternList = (props: Props) => {
   const [svgFile, setSvgFile] = useRecoilState<string>(svgFileContent); //選択されたPatternのsvgコード
   const [pattern, setPattern] = useRecoilState<string>(patternState); //選択されたPatternの名前(ex,Argyle)
 
-  const PatternNames: string[] = ["Triangles", "Argyle", "TartanCheck", "ColorfulDot", "Asanoha"];
+  const PatternNames: string[] = ["Triangles", "Argyle", "TartanCheck", "ColorDot", "Asanoha"];
 
   //Pattern選択ボタン
   const onClick = (event: ChangeEvent<HTMLInputElement>) => {
@@ -34,8 +34,8 @@ const DefaultPatternList = (props: Props) => {
       case "TartanCheck":
         setSvgFile(TartanCheck);
         break;
-      case "ColorfulDot":
-        setSvgFile(ColorfulDot);
+      case "ColorDot":
+        setSvgFile(ColorDot);
         break;
       case "Asanoha":
         setSvgFile(Asanoha);

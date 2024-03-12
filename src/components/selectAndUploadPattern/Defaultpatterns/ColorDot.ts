@@ -1,4 +1,4 @@
-export const ColorfulDot = `<?xml version="1.0" encoding="UTF-8"?>
+export const ColorDot = `<?xml version="1.0" encoding="UTF-8"?>
 <svg id="_レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
   <defs>
     <pattern id="Unnamed_Pattern" data-name="Unnamed Pattern" width="2000" height="1000" patternTransform="translate(-743.2 -332.45)" patternUnits="userSpaceOnUse" viewBox="0 0 2000 1000">
